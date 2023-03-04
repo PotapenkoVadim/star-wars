@@ -1,0 +1,9 @@
+@import '../../../styles/variables';
+
+.icon { display: block; width: 32px; height: 32px; mask-position: center; mask-repeat: no-repeat; mask-size: contain;
+  &__menu { mask-image: url(../../../assets/icons/menu.svg); }
+  &__close { mask-image: url(../../../assets/icons/close.svg); }
+
+  &_black { background-color: black; }
+  &_white { background-color: white; }
+}

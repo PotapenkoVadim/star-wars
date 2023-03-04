@@ -1,0 +1,26 @@
+@import '../../styles/variables';
+
+.layout {
+  &__header { background-color: $background; position: relative; }
+  &__header-content { display: flex; align-items: center; justify-content: space-between; padding-top: 5px; padding-bottom: 5px; }
+  &__navigation { display: flex; align-items: center; gap: calc($display-index * 3); transition: .3s; }
+  &__logo { z-index: 2; }
+  &__navlink { color: white; font-size: 1.56rem; text-decoration: none; padding: 15px 0; position: relative;
+    &::after { content: ''; position: absolute; bottom: 0; left: 50%;  height: 3px; background-color: transparent;
+      transform: translateX(-50%); width: 0; transition: .3s;
+    }
+
+    &:hover::after, &:global(.active)::after { background-color: $grey; width: 80%; }
+  }
+
+  &__mobile-menu { position: absolute; right: calc($display-index * 2); top: 50%; transform: translateY(-50%); display: none; }
+
+  @media (max-width: $mobile) {
+    &__navigation { position: fixed; inset: 0; height: 100vh; width: 85vw; background-color: $background; flex-direction: column;
+      justify-content: center; transform: translateX(-100%);
+    }
+
+    &__navigation_open { transform: translateX(0); }
+    &__mobile-menu { display: block; }
+  }
+}
