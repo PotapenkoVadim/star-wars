@@ -1,0 +1,9 @@
+@import '../../../styles/variables';
+
+.selector { display: flex; align-items: center; gap: 15px;
+  &__switcher { box-shadow: 2px 2px 2px rgba(33, 33, 33, 0.1); background: $light-background; border-radius: 4px;
+    padding: 3px 50px;
+  }
+
+  &__options { width: 60%; right: 0; transform: translateX(-20px); }
+}
