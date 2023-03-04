@@ -1,0 +1,42 @@
+{
+  "env": {
+      "browser": true,
+      "es2021": true
+  },
+  "extends": [
+    "react-app",
+    "react-app/jest"
+  ],
+  "overrides": [{
+    "files": ["*.jsx", "*.js"]
+  }],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+      "prettier"
+  ],
+  "rules": {
+    "react/prop-types": 0,
+    "indent": [
+        "error",
+        2
+    ],
+    "linebreak-style": [
+        "error",
+        "unix"
+    ],
+    "quotes": [
+        "error",
+        "single"
+    ],
+    "semi": [
+        "error",
+        "always"
+    ]
+  }
+}
