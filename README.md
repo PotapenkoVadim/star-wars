@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Создание приложения для просмотра информации о звездных войнах
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Общие сведения
+Используя [Star Wars API](https://swapi.dev/documentation) необходимо создать небольшое приложение с информационными карточками персонажей.
 
-## Available Scripts
+Примерный [макет](https://www.figma.com/file/SHilmuqmNa4GXNUSJNUauv/StarWars?node-id=2%3A3&t=zcbcyVY0nFHuB6VJ-0) приложения.
 
-In the project directory, you can run:
+Приложение должно содержать 3 страницы: 
+- Главная: страница содержит приветствие пользователя, навигационное меню (активная в данный момент страница в меню должна быть подсвечена), кнопку перехода к странице с карточками персонажей.
+- Страница с карточками о персонажах. 
+- Страница с ошибкой 404.
 
-### `npm start`
+### Сраница с карточками о персонажах
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Навигационное меню должно быть доступно как на главной странице, так и на странице с карточками.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Заголовок страницы должен содержать общее количество персонажей.
 
-### `npm test`
+**Фильтр по персонажам:**
+- Реализовать выпадающий список значений любого атрибута из карточки о персонаже. Список значений должен содержать дополнительное значение all для выбора всех персонажей. При выборе значения all должен отображаться весь ранее полученный набор данных на странице.
+- Реализовать фильтрацию по выбранному из списка значению. Фильтрация должна осуществляться локально (на фронте) среди ранее полученного от АПИ набора данных. Дополнительных запросов к АПИ при фильтрации персонажей осуществляться не должно.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Пагинация:**
+Реализовать пагинацию или бесконечную подгрузку карточек на страницу.
 
-### `npm run build`
+**Карточки персонажей:**
+- Карточка содержит имя и общую информацию о персонаже.
+- Карточка должна быть кликабельна. При клике на карточку должно открываться модальное окно с подробной информацией о персонаже.
+- На представленном макете в карточке персонажа присутствуют цветные тэги. Голубой с датой рождения. Желтый, зеленый и фиолетовый с гендерным признаком. При отсутствии какой-либо информации тэг в карточке отображаться не должен.
+- В модальном окне с подробной информацией необходимо выводить иконку в соответствии с полем gender выбранного персонажа.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Общие требования:
+- При загрузке данных с сервера отображать на странице загрузчик (загрузчик может быть любой на усмотрение разработчика).
+- Компонент карточки должен быть протестирован.
+- Полноценный адаптив делать не требуется, но страницы должны выглядеть адекватно на широких и узких экранах.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Дополнительное задание (* со звездочкой):
+- Реализовать фиксированную кнопку перевода на язык wookiee и обратно ([кнопка перевода](https://www.figma.com/file/SHilmuqmNa4GXNUSJNUauv/StarWars?node-id=76%3A1804&t=0lklJxTUf12p7HJ7-0)).
+- При нажатии на кнопку переводить страницу на язык wookiee и обратно на английский. Например, текущий заголовок страницы "60 Peoples for you to choose your favorite" на языке wookie может иметь следующий вид "60 rcwochuanaoc".
+- Отображать на странице информацию о текущем языке.
