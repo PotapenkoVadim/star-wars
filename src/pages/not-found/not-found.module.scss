@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.notfound { background-color: $dark-background; display: flex; align-items: center; justify-content: center;
+  flex-direction: column; height: calc(100vh - 95px); position: relative;
+
+  &__code { color: rgba(255, 255, 255, 0.5); letter-spacing: 4px; font-size: 25rem; }
+  &__poster { position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); height: 350px; }
+  &__button-link { color: $button-text; text-decoration: none; }
+
+  @media (max-width: $mobile) {
+    &__poster { display: none; }
+    &__code { font-size: 10rem; }
+  }
+}
