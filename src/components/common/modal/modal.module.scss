@@ -1,25 +1,25 @@
 @import '../../../styles/variables';
 
-.modal { display: none; position: fixed; top: 0; left: 0; right: 0; z-index: 5; overflow: auto; background-color: rgb(0,0,0);
+.modal { display: none; position: fixed; top: 0; left: 0; bottom: 0; right: 0; z-index: 5; overflow: auto; background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
 
-  &__content { background-color: $light-background; margin: 15% auto; border: 1px solid #888; width: 800px;
+  &__content { background-color: $light-background; border: 1px solid #888; width: 800px;
     position: relative; background: linear-gradient(180deg, #17002F 42.19%, #1F2A63 100%);
     box-shadow: 4px 4px 8px rgba(1, 28, 64, 0.2); border-radius: 8px;
   }
 
   &__close { position: absolute; top: -50px; right: 0; cursor: pointer; z-index: 10; }
 
-  &_open { display: block; }
+  &_open { display: flex; align-items: center; justify-content: center; }
 
   @media (max-width: $tablet) {
-    &__content { width: 80%; }
-  }
-
-  @media (max-width: $mobile) {
-    &__content { width: max-content; height: 100%; margin: 15px auto; }
+    &__content { width: max-content; }
     &__close { top: 10px; right: 10px;
       & > * { background-color: white; }
     }
+  }
+
+  @media (max-width: $mobile) {
+    &__content { height: 100%; margin: 15px auto; }
   }
 }

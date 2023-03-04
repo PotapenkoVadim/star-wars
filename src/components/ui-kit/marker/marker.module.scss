@@ -1,8 +1,8 @@
 @import '../../../styles/variables';
 
 .marker { padding: 0 10px; box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.18); border-radius: 11px;
-  &_yellow { background-color: $accent; }
-  &_green { background-color: $green; }
-  &_blue { background-color: $blue; }
-  &_pink { background-color: $pink; }
+  &_yellow, &_hermaphrodite { background-color: $accent; }
+  &_green, &_male { background-color: $green; }
+  &_blue, &_brith { background-color: $blue; }
+  &_pink, &_female { background-color: $pink; }
 }

@@ -2,17 +2,19 @@
 
 .character { display: flex; align-items: center;
   &__profile { background-color: $background; padding: 50px; border-radius: 8px 0 0 8px; flex: 1; position: relative; }
-  &__tags { position: absolute; bottom: 10px; right: 10px; }
+  &__tags { position: absolute; bottom: 10px; right: 10px; display: flex; align-items: center; gap: 10px; }
   &__info { padding: 0 15px; flex: 2; }
+  &__image { width: 100%; }
   &__name { color: $light; text-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1); font-size: 2.25rem; margin-bottom: 20px; font-weight: 700; }
   &__meta { background-color: $light; padding: 15px 20px; color: black; box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
-    border-radius: 8px; width: max-content; margin-bottom: 70px;
+    border-radius: 8px; width: max-content; margin-bottom: 40px;
   }
 
   &__meta-props { display: flex; align-items: center; gap: 25px; }
   &__props { background-color: $light; box-shadow: 4px 4px 24px rgba(1, 17, 38, 0.2); border-radius: 8px; padding: 20px 25px 10px; }
 
-  @media (max-width: $mobile) { flex-direction: column; padding-bottom: 10px;
+  @media (max-width: $tablet) { flex-direction: column; padding-bottom: 10px; gap: 10px;
+    &__profile { max-width: 300px; }
     &__name { font-size: 1.25rem; }
     &__meta { margin-bottom: 25px; }
   }

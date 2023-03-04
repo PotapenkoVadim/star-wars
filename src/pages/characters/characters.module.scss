@@ -7,6 +7,8 @@
 
   &__filters { display: flex; margin-bottom: 30px; }
   &__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; }
+  &__trigger { height: 5px; }
+  &__note { text-align: center; color: tomato; font-size: 2.5rem; font-weight: bold; letter-spacing: 1px; margin-top: 25px; }
 
   @media (max-width: $mobile) {
     &__list { grid-template-columns: 1fr; }
