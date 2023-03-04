@@ -1,4 +1,5 @@
 import Marker from '../../ui-kit/marker';
+import MetaProp from '../../ui-kit/meta-prop';
 import styles from './character-card.module.scss';
 
 export default function CharacterCard() {
@@ -7,15 +8,8 @@ export default function CharacterCard() {
       <div className={styles['character__name']}>Jango Fett</div>
 
       <div className={styles['character__meta']}>
-        <div className={styles['character__meta-item']}>
-          <span className={styles['character__meta-value']}>172</span>
-          <span className={styles['character__meta-label']}>height</span>
-        </div>
-
-        <div className={styles['character__meta-item']}>
-          <span className={styles['character__meta-value']}>90</span>
-          <span className={styles['character__meta-label']}>mass</span>
-        </div>
+        <MetaProp value='172' title='height' />
+        <MetaProp value='92' title='mass' />
       </div>
 
       <div>

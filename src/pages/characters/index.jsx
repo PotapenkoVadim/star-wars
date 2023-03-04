@@ -1,8 +1,11 @@
 import CharacterCard from '../../components/common/character-card';
+import CharacterModal from '../../components/common/character-modal';
 import Selector from '../../components/ui-kit/selector';
 import styles from './characters.module.scss';
 
 export default function CharactersPage() {
+  const closeCharacterModal = () => console.log('Close character modal');
+
   return (
     <main className={`container ${styles['characters']}`}>
       <div className={styles['characters__title']}>
@@ -24,6 +27,10 @@ export default function CharactersPage() {
         <CharacterCard />
         <CharacterCard />
       </div>
+
+      <CharacterModal
+        character={null}
+        handleClose={closeCharacterModal} />
     </main>
   );
 }
