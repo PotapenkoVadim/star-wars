@@ -24,7 +24,7 @@ export default function CharacterModal({ character, handleClose }) {
                 <Marker color='brith'>{character.birth_year}</Marker>
               )}
 
-              {character.gender && character.gender !== 'n/a' && (
+              {character.gender && !['n/a', 'none'].includes(character.gender) && (
                 <Marker color={character.gender}>{character.gender}</Marker>
               )}
             </div>

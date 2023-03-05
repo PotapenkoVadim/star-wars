@@ -6,7 +6,7 @@ export default function CharacterCard({ character, handleClick }) {
   const onClick = () => handleClick(character);
   
   return (
-    <div onClick={onClick} className={styles['character']}>
+    <div data-testid='charactercard' onClick={onClick} className={styles['character']}>
       <div className={styles['character__name']}>{character.name}</div>
 
       <div className={styles['character__meta']}>
@@ -24,7 +24,7 @@ export default function CharacterCard({ character, handleClick }) {
           <Marker color='brith'>{character.birth_year}</Marker>
         )}
 
-        {character.gender && character.gender !== 'n/a' && (
+        {character.gender && !['n/a', 'none'].includes(character.gender) && (
           <Marker color={character.gender}>{character.gender}</Marker>
         )}
       </div>

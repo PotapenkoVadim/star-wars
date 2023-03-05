@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Character card Match snapshot 1`] = `
+<div>
+  <div
+    class="character"
+    data-testid="charactercard"
+  >
+    <div
+      class="character__name"
+    >
+      Luke Skywalker
+    </div>
+    <div
+      class="character__meta"
+    />
+    <div
+      class="character__tags"
+    >
+      <span
+        class="
+      marker
+      marker_brith
+    "
+      >
+        19BBY
+      </span>
+      <span
+        class="
+      marker
+      marker_male
+    "
+      >
+        male
+      </span>
+    </div>
+  </div>
+</div>
+`;
