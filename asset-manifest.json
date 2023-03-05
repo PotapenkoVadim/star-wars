@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.d924040d.css",
-    "main.js": "/static/js/main.1bcd0474.js",
-    "static/media/banner.png": "/static/media/banner.1783c732b41f4e6c26e5.png",
-    "static/media/death-star.png": "/static/media/death-star.1368e629892d7226336b.png",
-    "static/media/female.png": "/static/media/female.9932990449e8b3c284a2.png",
-    "static/media/hermaphrodite.png": "/static/media/hermaphrodite.386a5f879c6228d67d8a.png",
-    "static/media/logo.png": "/static/media/logo.6539bd043893085261e1.png",
-    "static/media/no-image.webp": "/static/media/no-image.2ea85b4c8b45103686f1.webp",
-    "index.html": "/index.html",
-    "static/media/close.svg": "/static/media/close.c76ad28c33323dfe86ec.svg",
-    "static/media/menu.svg": "/static/media/menu.c16ad7d4e68aa1552ac6.svg",
-    "main.d924040d.css.map": "/static/css/main.d924040d.css.map",
-    "main.1bcd0474.js.map": "/static/js/main.1bcd0474.js.map"
+    "main.css": "/star-wars/static/css/main.afe6bb21.css",
+    "main.js": "/star-wars/static/js/main.8c00488e.js",
+    "static/media/banner.png": "/star-wars/static/media/banner.1783c732b41f4e6c26e5.png",
+    "static/media/death-star.png": "/star-wars/static/media/death-star.1368e629892d7226336b.png",
+    "static/media/female.png": "/star-wars/static/media/female.9932990449e8b3c284a2.png",
+    "static/media/hermaphrodite.png": "/star-wars/static/media/hermaphrodite.386a5f879c6228d67d8a.png",
+    "static/media/logo.png": "/star-wars/static/media/logo.6539bd043893085261e1.png",
+    "static/media/no-image.webp": "/star-wars/static/media/no-image.2ea85b4c8b45103686f1.webp",
+    "index.html": "/star-wars/index.html",
+    "static/media/close.svg": "/star-wars/static/media/close.c76ad28c33323dfe86ec.svg",
+    "static/media/menu.svg": "/star-wars/static/media/menu.c16ad7d4e68aa1552ac6.svg",
+    "main.afe6bb21.css.map": "/star-wars/static/css/main.afe6bb21.css.map",
+    "main.8c00488e.js.map": "/star-wars/static/js/main.8c00488e.js.map"
   },
   "entrypoints": [
-    "static/css/main.d924040d.css",
-    "static/js/main.1bcd0474.js"
+    "static/css/main.afe6bb21.css",
+    "static/js/main.8c00488e.js"
   ]
 }
