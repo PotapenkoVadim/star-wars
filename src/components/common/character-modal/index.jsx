@@ -2,13 +2,17 @@ import Modal from '../modal';
 import MetaProp from '../../ui-kit/meta-prop';
 import Marker from '../../ui-kit/marker';
 import { configuration } from '../../../configuration';
+import useTranslatedCharacter from '../../../hooks/use-translated-character';
 import styles from './character-modal.module.scss';
 
 import mockImage from '../../../assets/images/no-image.webp';
 
 const genderImages = configuration.genderImages;
+const falsyProperties = configuration.falsyProperties;
 
-export default function CharacterModal({ character, handleClose }) {
+export default function CharacterModal({ character, handleClose, language }) {
+  const translatedCharacter = useTranslatedCharacter(character, language);
+
   return (
     <Modal onClose={handleClose} isOpen={Boolean(character)}>
       {character && (
@@ -16,47 +20,47 @@ export default function CharacterModal({ character, handleClose }) {
           <div className={styles['character__profile']}>
             <img
               className={styles['character__image']}
-              src={genderImages[character.gender] ?? mockImage}
+              src={genderImages[translatedCharacter.gender] ?? mockImage}
               alt='Profile' />
 
             <div className={styles['character__tags']}>
-              {character.birth_year && character.birth_year !== 'unknown' && (
-                <Marker color='brith'>{character.birth_year}</Marker>
+              {translatedCharacter.birth_year && !falsyProperties.includes(translatedCharacter.birth_year) && (
+                <Marker color='brith'>{translatedCharacter.birth_year}</Marker>
               )}
 
-              {character.gender && !['n/a', 'none'].includes(character.gender) && (
-                <Marker color={character.gender}>{character.gender}</Marker>
+              {translatedCharacter.gender && !falsyProperties.includes(translatedCharacter.gender) && (
+                <Marker color={translatedCharacter.gender}>{translatedCharacter.gender}</Marker>
               )}
             </div>
           </div>
 
           <div className={styles['character__info']}>
-            <div className={styles['character__name']}>{character.name}</div>
+            <div className={styles['character__name']}>{translatedCharacter.name}</div>
 
             <div className={styles['character__meta']}>
-              {character.hair_color && character.hair_color !== 'n/a' && (
-                <div>hair color: {character.hair_color}</div>
+              {translatedCharacter.hair_color && !falsyProperties.includes(translatedCharacter.hair_color) && (
+                <div>hair color: {translatedCharacter.hair_color}</div>
               )}
 
-              {character.skin_color && character.skin_color !== 'n/a' && (
-                <div>skin color: {character.skin_color}</div>
+              {translatedCharacter.skin_color && !falsyProperties.includes(translatedCharacter.skin_color) && (
+                <div>skin color: {translatedCharacter.skin_color}</div>
               )}
 
-              {character.eye_color && character.eye_color !== 'n/a' && (
-                <div>eye color: {character.eye_color}</div>
+              {translatedCharacter.eye_color && !falsyProperties.includes(translatedCharacter.eye_color) && (
+                <div>eye color: {translatedCharacter.eye_color}</div>
               )}
             </div>
 
             <div className={styles['character__meta-props']}>
-              {character.height && character.height !== 'unknown' && (
+              {translatedCharacter.height && !falsyProperties.includes(translatedCharacter.height) && (
                 <div className={styles['character__props']}>
-                  <MetaProp value={character.height} title='height' />
+                  <MetaProp value={translatedCharacter.height} title='height' />
                 </div>
               )}
 
-              {character.mass && character.mass !== 'unknown' && (
+              {translatedCharacter.mass && !falsyProperties.includes(translatedCharacter.mass) && (
                 <div className={styles['character__props']}>
-                  <MetaProp value={character.mass} title='mass' />
+                  <MetaProp value={translatedCharacter.mass} title='mass' />
                 </div>
               )}
             </div>

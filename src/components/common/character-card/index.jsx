@@ -1,31 +1,39 @@
+import { configuration } from '../../../configuration';
+import useTranslatedCharacter from '../../../hooks/use-translated-character';
 import Marker from '../../ui-kit/marker';
 import MetaProp from '../../ui-kit/meta-prop';
 import styles from './character-card.module.scss';
 
-export default function CharacterCard({ character, handleClick }) {
+const falsyProperties = configuration.falsyProperties;
+
+export default function CharacterCard({ character, handleClick, language }) {
+  const translatedCharacter = useTranslatedCharacter(character, language);
+
   const onClick = () => handleClick(character);
   
   return (
     <div data-testid='charactercard' onClick={onClick} className={styles['character']}>
-      <div className={styles['character__name']}>{character.name}</div>
+      <div className={styles['character__name']}>{translatedCharacter.name}</div>
 
       <div className={styles['character__meta']}>
-        {character.height && character.height !== 'unknown' && (
-          <MetaProp value={character.height} title='height' />
+        {translatedCharacter.height && !falsyProperties.includes(translatedCharacter.height) && (
+          <MetaProp value={translatedCharacter.height} title='height' />
         )}
 
-        {character.mass && character.mass !== 'unknown' && (
-          <MetaProp value={character.mass} title='mass' />
+        {translatedCharacter.mass && !falsyProperties.includes(translatedCharacter.mass) && (
+          <MetaProp value={translatedCharacter.mass} title='mass' />
         )}
       </div>
 
       <div className={styles['character__tags']}>
-        {character.birth_year && character.birth_year !== 'unknown' && (
-          <Marker color='brith'>{character.birth_year}</Marker>
+        {translatedCharacter.birth_year && !falsyProperties.includes(translatedCharacter.birth_year) && (
+          <Marker color='brith'>{translatedCharacter.birth_year}</Marker>
         )}
 
-        {character.gender && !['n/a', 'none'].includes(character.gender) && (
-          <Marker color={character.gender}>{character.gender}</Marker>
+        {translatedCharacter.gender && !falsyProperties.includes(translatedCharacter.gender) && (
+          <Marker color={translatedCharacter.gender}>
+            {translatedCharacter.gender}
+          </Marker>
         )}
       </div>
     </div>

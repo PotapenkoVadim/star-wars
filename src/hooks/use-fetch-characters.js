@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
+import { configuration } from '../configuration';
 
-export default function useFetchCharacters(page) {
+const characterKeys = configuration.characterKeys;
+
+export default function useFetchCharacters(page, language) {
   const [count, setCount] = useState(0);
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -9,17 +12,30 @@ export default function useFetchCharacters(page) {
   useEffect(() => {
     if (page) {
       setIsLoading(true);
+
+      if (page === 1) {
+        setCount(0);
+        setData([]);
+      }
+
+      const  params = new URLSearchParams(language === 'wookiee'
+        ? { page, format: 'wookiee' }
+        : { page }
+      );
   
-      fetch(`https://swapi.dev/api/people?page=${page}`)
-        .then(response => response.json())
+      fetch(`https://swapi.dev/api/people?${params}`)
+        .then(response => response.text())
         .then(result => {
-          setData([...data, ...result.results]);
-          setCount(result.count);
+          const clearnedResult = result.replace('"akrcwohoahoohuc":whhuanan,', '');
+          const safeResult = JSON.parse(clearnedResult);
+
+          setData((prevData) => [...prevData, ...safeResult[characterKeys[language].results]]);
+          setCount(() => safeResult[characterKeys[language].count]);
         })
         .catch(error => setError(error))
         .finally(() => setTimeout(() => setIsLoading(false)));
     }
-  }, [page]);
+  }, [page, language]);
 
   return {
     data,

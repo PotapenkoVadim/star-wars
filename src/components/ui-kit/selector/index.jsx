@@ -1,7 +1,7 @@
 import Select from 'react-select';
 import styles from './selector.module.scss';
 
-export default function Selector({ placeholder, options, handleChange, value }) {
+export default function Selector({ placeholder, options, handleChange }) {
   return (
     <div className={styles['selector']}>
       <span className={styles['selector__placeholder']}>

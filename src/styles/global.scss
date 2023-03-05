@@ -7,6 +7,8 @@
 body { font-family: 'Karla', sans-serif; font-size: $font-size; }
 .container { max-width: 1150px; margin: 0 auto; padding: 0 calc($display-index * 2); }
 
+.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; clip: rect(0 0 0 0); overflow: hidden; }
+
 .react-select__control { min-height: auto !important; background-color: $light-background !important; width: 150px; }
 .react-select__indicator { padding: 0 5px 0 25px !important; }
 .react-select__indicator-separator { display: none; }
